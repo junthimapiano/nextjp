@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Nav";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,13 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
       <body className={inter.className}>
-      <Navbar/>
-        {children}</body>
-
-
-
+        <Navbar />
+        <div className="container mx-auto py-8 shadow-xl">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
